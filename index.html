@@ -53,19 +53,24 @@
     .nav-content {
       display: flex;
       align-items: center;
-      gap: 2rem;
+      gap: 1.5rem;
       position: relative;
+      width: 100%;
+      max-width: 1200px;
+      justify-content: space-between;
     }
     .nav-links {
       display: flex;
       gap: 1.5rem;
+      flex-wrap: wrap;
+      justify-content: center;
     }
     nav a.nav-link {
       color: #ffffff;
       text-decoration: none;
       font-size: 1.2rem;
       padding: 0.5rem 1rem;
-      border-radius: 25px;
+      border-radius: 20px;
       background: rgba(255, 69, 0, 0.2);
       transition: all 0.3s ease;
       position: relative;
@@ -101,8 +106,8 @@
       align-items: center;
     }
     .social-nav img {
-      width: 60px;
-      height: 60px;
+      width: 48px;
+      height: 48px;
       transition: all 0.3s ease;
       filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.3));
     }
@@ -225,8 +230,8 @@
     }
     .skills-container {
       position: relative;
-      width: clamp(700px, 80vw, 900px);
-      height: clamp(700px, 80vw, 900px);
+      width: clamp(600px, 80vw, 800px);
+      height: clamp(600px, 80vw, 800px);
       margin: 2rem auto;
       perspective: 1000px;
     }
@@ -235,8 +240,8 @@
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      width: 180px;
-      height: 180px;
+      width: clamp(160px, 15vw, 180px);
+      height: clamp(160px, 15vw, 180px);
       background: radial-gradient(circle, rgba(255, 170, 0, 0.8), rgba(255, 69, 0, 0.2));
       border-radius: 50%;
       display: flex;
@@ -255,14 +260,14 @@
     }
     .skill-item {
       position: absolute;
-      width: clamp(60px, 10vw, 80px);
+      width: clamp(70px, 10vw, 80px);
       text-align: center;
       transform-style: preserve-3d;
       transition: transform 0.3s ease;
     }
     .skill-item img {
-      width: clamp(40px, 7vw, 50px);
-      height: clamp(40px, 7vw, 50px);
+      width: clamp(45px, 7vw, 50px);
+      height: clamp(45px, 7vw, 50px);
       border-radius: 50%;
       border: 2px solid #00ffcc;
       box-shadow: 0 0 10px rgba(0, 255, 204, 0.5);
@@ -270,7 +275,7 @@
     }
     .skill-item span {
       display: block;
-      font-size: clamp(0.7rem, 1.5vw, 0.9rem);
+      font-size: clamp(0.8rem, 1.5vw, 0.9rem);
       margin-top: 0.5rem;
       color: #ff4500;
       text-shadow: 0 0 5px rgba(255, 69, 0, 0.5);
@@ -361,7 +366,7 @@
     }
     .github-link, .website-link {
       display: inline-block;
-      color: #ff4500;
+      color: #fatoof4500;
       text-decoration: none;
       font-size: clamp(0.9rem, 1.5vw, 1rem);
       margin-top: 0.5rem;
@@ -424,53 +429,71 @@
     }
     @media (max-width: 768px) {
       nav {
-        flex-wrap: wrap;
-        padding: 0.8rem;
+        padding: 0.5rem;
       }
       .nav-content {
         flex-direction: column;
-        gap: 1rem;
+        gap: 0.4rem;
       }
       .nav-links {
-        gap: 0.8rem;
+        gap: 0.4rem;
+        flex-wrap: wrap;
+        justify-content: center;
       }
       nav a.nav-link {
-        font-size: 1rem;
-        padding: 0.4rem 0.8rem;
+        font-size: 0.8rem;
+        padding: 0.2rem 0.5rem;
+        border-radius: 12px;
       }
       .social-nav {
-        gap: 0.8rem;
+        gap: 0.5rem;
+        margin-top: 0.5rem;
       }
       .social-nav img {
-        width: 24px;
-        height: 24px;
+        width: 28px;
+        height: 28px;
       }
       section {
-        padding: 3rem 1rem;
+        padding: 3rem 0.8rem;
       }
       #home {
         flex-direction: column;
-        padding: 3rem 1rem;
+        padding: 2rem 0.8rem;
       }
       #home .section-content {
         max-width: 100%;
         text-align: center;
       }
       .profile-image {
-        width: clamp(150px, 20vw, 200px);
-        height: clamp(150px, 20vw, 200px);
-        margin: 1rem auto;
+        width: clamp(120px, 18vw, 160px);
+        height: clamp(120px, 18vw, 160px);
+        margin: 0.8rem auto;
       }
       .skills-container {
-        width: clamp(400px, 60vw, 600px);
-        height: clamp(400px, 60vw, 600px);
+        width: clamp(200px, 50vw, 300px);
+        height: clamp(200px, 50vw, 300px);
+      }
+      .skills-center {
+        width: clamp(100px, 12vw, 120px);
+        height: clamp(100px, 12vw, 120px);
+      }
+      .skills-center span {
+        font-size: clamp(0.8rem, 1.5vw, 1rem);
       }
       .skill-item {
-        width: clamp(50px, 8vw, 60px);
+        width: clamp(35px, 7vw, 40px);
       }
       .skill-item img {
-        width: clamp(30px, 5vw, 40px);
-        height: clamp(30px, 5vw, 40px);
+        width: clamp(20px, 5vw, 25px);
+        height: clamp(20px, 5vw, 25px);
+      }
+      .skill-item span {
+        font-size: clamp(0.4rem, 1vw, 0.5rem);
+        margin-top: 0.3rem;
+      }
+      .orbit-path {
+        width: clamp(120px, 35vw, 160px) !important;
+        height: clamp(72px, 21vw, 96px) !important;
       }
       .project-card {
         flex-direction: column;
@@ -478,49 +501,64 @@
       }
       .project-image {
         width: 100%;
-        max-width: 300px;
+        max-width: 200px;
         height: auto;
+      }
+      h1 {
+        font-size: clamp(1.5rem, 4vw, 2rem);
+      }
+      .typewriter-container {
+        font-size: clamp(1rem, 2.5vw, 1.5rem);
+      }
+      p {
+        font-size: clamp(0.8rem, 1.5vw, 1rem);
+      }
+      .download-button {
+        padding: 0.6rem 1rem;
+        font-size: clamp(0.7rem, 1.2vw, 0.8rem);
+      }
+      .contact-link {
+        font-size: clamp(0.8rem, 1.5vw, 1rem);
       }
     }
     @media (max-width: 480px) {
       nav a.nav-link {
-        font-size: 0.9rem;
-        padding: 0.3rem 0.6rem;
+        font-size: 0.7rem;
+        padding: 0.2rem 0.4rem;
+        border-radius: 10px;
       }
       .social-nav img {
-        width: 20px;
-        height: 20px;
-      }
-      h1 {
-        font-size: 2rem;
-      }
-      .typewriter-container {
-        font-size: 1.5rem;
+        width: 24px;
+        height: 24px;
       }
       .skills-container {
-        width: clamp(300px, 50vw, 500px);
-        height: clamp(300px, 50vw, 500px);
+        width: clamp(180px, 45vw, 250px);
+        height: clamp(180px, 45vw, 250px);
       }
       .skills-center {
-        width: 140px;
-        height: 140px;
+        width: clamp(80px, 10vw, 100px);
+        height: clamp(80px, 10vw, 100px);
       }
       .skill-item img {
-        width: clamp(25px, 4vw, 30px);
-        height: clamp(25px, 4vw, 30px);
+        width: clamp(18px, 4vw, 22px);
+        height: clamp(18px, 4vw, 22px);
       }
       .skill-item span {
-        font-size: clamp(0.6rem, 1vw, 0.7rem);
+        font-size: clamp(0.35rem, 0.8vw, 0.45rem);
       }
-      .project-image {
-        max-width: 200px;
+      .orbit-path {
+        width: clamp(100px, 30vw, 140px) !important;
+        height: clamp(60px, 18vw, 84px) !important;
       }
       .profile-image {
-        width: clamp(120px, 15vw, 150px);
-        height: clamp(120px, 15vw, 150px);
+        width: clamp(100px, 15vw, 140px);
+        height: clamp(100px, 15vw, 140px);
+      }
+      .project-image {
+        max-width: 180px;
       }
     }
-    .name {
+    .nameKILL {
       color: #ff4500;
     }
   </style>
@@ -584,58 +622,58 @@
           <span>14+</span>
           <span>Skills</span>
         </div>
-        <div class="orbit-path" style="width: 360px; height: 216px;"></div>
-        <div class="orbit-path" style="width: 610px; height: 366px;"></div>
-        <div class="orbit-path" style="width: 860px; height: 516px;"></div>
-        <div class="skill-item" data-orbit="0" data-radius="180" data-speed="0.5">
+        <div class="orbit-path" style="width: 400px; height: 240px;"></div>
+        <div class="orbit-path" style="width: 600px; height: 360px;"></div>
+        <div class="orbit-path" style="width: 800px; height: 480px;"></div>
+        <div class="skill-item" data-orbit="0" data-radius="200" data-speed="0.5">
           <img src="https://cdn.jsdelivr.net/npm/devicon@2.15.1/icons/react/react-original.svg" alt="React">
           <span>React</span>
         </div>
-        <div class="skill-item" data-orbit="90" data-radius="180" data-speed="0.5">
+        <div class="skill-item" data-orbit="90" data-radius="200" data-speed="0.5">
           <img src="https://cdn.jsdelivr.net/npm/devicon@2.15.1/icons/html5/html5-original.svg" alt="HTML">
           <span>HTML</span>
         </div>
-        <div class="skill-item" data-orbit="180" data-radius="180" data-speed="0.5">
+        <div class="skill-item" data-orbit="180" data-radius="200" data-speed="0.5">
           <img src="https://cdn.jsdelivr.net/npm/devicon@2.15.1/icons/css3/css3-original.svg" alt="CSS">
           <span>CSS</span>
         </div>
-        <div class="skill-item" data-orbit="270" data-radius="180" data-speed="0.5">
+        <div class="skill-item" data-orbit="270" data-radius="200" data-speed="0.5">
           <img src="https://cdn.jsdelivr.net/npm/devicon@2.15.1/icons/c/c-original.svg" alt="C">
           <span>C</span>
         </div>
-        <div class="skill-item" data-orbit="0" data-radius="305" data-speed="0.4">
+        <div class="skill-item" data-orbit="0" data-radius="300" data-speed="0.4">
           <img src="https://cdn.jsdelivr.net/npm/devicon@2.15.1/icons/javascript/javascript-original.svg" alt="JavaScript">
           <span>JavaScript</span>
         </div>
-        <div class="skill-item" data-orbit="72" data-radius="305" data-speed="0.4">
+        <div class="skill-item" data-orbit="72" data-radius="300" data-speed="0.4">
           <img src="https://cdn.jsdelivr.net/npm/devicon@2.15.1/icons/python/python-original.svg" alt="Python">
           <span>Python</span>
         </div>
-        <div class="skill-item" data-orbit="144" data-radius="305" data-speed="0.4">
+        <div class="skill-item" data-orbit="144" data-radius="300" data-speed="0.4">
           <img src="https://cdn.jsdelivr.net/npm/devicon@2.15.1/icons/nodejs/nodejs-original.svg" alt="Node.js">
           <span>Node.js</span>
         </div>
-        <div class="skill-item" data-orbit="216" data-radius="305" data-speed="0.4">
+        <div class="skill-item" data-orbit="216" data-radius="300" data-speed="0.4">
           <img src="https://cdn.jsdelivr.net/npm/devicon@2.15.1/icons/java/java-original.svg" alt="Java">
           <span>Java</span>
         </div>
-        <div class="skill-item" data-orbit="288" data-radius="305" data-speed="0.4">
+        <div class="skill-item" data-orbit="288" data-radius="300" data-speed="0.4">
           <img src="https://cdn.jsdelivr.net/npm/devicon@2.15.1/icons/github/github-original.svg" alt="GitHub">
           <span>GitHub</span>
         </div>
-        <div class="skill-item" data-orbit="0" data-radius="430" data-speed="0.3">
+        <div class="skill-item" data-orbit="0" data-radius="400" data-speed="0.3">
           <img src="https://cdn.jsdelivr.net/npm/devicon@2.15.1/icons/mysql/mysql-original.svg" alt="SQL">
           <span>SQL</span>
         </div>
-        <div class="skill-item" data-orbit="90" data-radius="430" data-speed="0.3">
+        <div class="skill-item" data-orbit="90" data-radius="400" data-speed="0.3">
           <img src="https://cdn.jsdelivr.net/npm/devicon@2.15.1/icons/amazonwebservices/amazonwebservices-original.svg" alt="AWS">
           <span>AWS Cloud Practitioner</span>
         </div>
-        <div class="skill-item" data-orbit="180" data-radius="430" data-speed="0.3">
+        <div class="skill-item" data-orbit="180" data-radius="400" data-speed="0.3">
           <img src="https://cdn.jsdelivr.net/npm/devicon@2.15.1/icons/express/express-original.svg" alt="Express.js">
           <span>Express.js</span>
         </div>
-        <div class="skill-item" data-orbit="270" data-radius="430" data-speed="0.3">
+        <div class="skill-item" data-orbit="270" data-radius="400" data-speed="0.3">
           <img src="https://cdn.jsdelivr.net/npm/devicon@2.15.1/icons/bootstrap/bootstrap-original.svg" alt="Bootstrap">
           <span>Bootstrap</span>
         </div>
@@ -865,8 +903,11 @@
     function animateSkills() {
       skillItems.forEach((item) => {
         let angle = parseFloat(item.dataset.orbit) || 0;
-        const radius = parseFloat(item.dataset.radius) || 100;
+        let radius = parseFloat(item.dataset.radius) || 100;
         const speed = parseFloat(item.dataset.speed) || 0.5;
+        // Scale radius based on screen width: smaller for mobile, larger for laptop
+        const scale = window.innerWidth <= 768 ? Math.min(window.innerWidth / 768, 0.4) : Math.min(window.innerWidth / 1200, 1);
+        radius *= scale;
         angle += speed;
         item.dataset.orbit = angle;
         const rad = (angle * Math.PI) / 180;
@@ -874,20 +915,20 @@
         let y = (radius * 0.6) * Math.sin(rad);
         x = isNaN(x) ? 0 : x;
         y = isNaN(y) ? 0 : y;
-        const minDistance = 100;
+        const minDistance = 40 * scale;
         const distance = Math.sqrt(x * x + y * y) || 1;
         let adjustedX = x;
         let adjustedY = y;
         if (distance < minDistance) {
-          const scale = minDistance / distance;
-          adjustedX = x * scale;
-          adjustedY = y * scale;
+          const scaleFactor = minDistance / distance;
+          adjustedX = x * scaleFactor;
+          adjustedY = y * scaleFactor;
         }
         item.style.left = `50%`;
         item.style.top = `50%`;
         item.style.transform = `translate(-50%, -50%) translate(${adjustedX}px, ${adjustedY}px)`;
         const span = item.querySelector('span');
-        if (span) span.style.transform = `translateY(10px)`;
+        if (span) span.style.transform = `translateY(${scale * 10}px)`;
       });
       requestAnimationFrame(animateSkills);
     }
