@@ -305,7 +305,7 @@
       pointer-events: none;
       z-index: 5;
     }
-    .project-grid {
+    .project-grid, .certification-grid {
       display: flex;
       flex-direction: column;
       gap: 2rem;
@@ -313,7 +313,7 @@
       max-width: 800px;
       margin: 0 auto;
     }
-    .project-card {
+    .project-card, .certification-card {
       background: rgba(255, 255, 255, 0.1);
       padding: 1.5rem;
       border-radius: 10px;
@@ -326,15 +326,15 @@
       opacity: 0;
       transform: translateX(100px);
     }
-    .project-card:nth-child(even) {
+    .project-card:nth-child(even), .certification-card:nth-child(even) {
       transform: translateX(-100px);
     }
-    .project-card:hover {
+    .project-card:hover, .certification-card:hover {
       transform: translateY(-10px) rotate(2deg);
       box-shadow: 0 0 20px rgba(0, 255, 204, 0.5);
       border: 2px solid #ff4500;
     }
-    .project-card::after {
+    .project-card::after, .certification-card::after {
       content: '';
       position: absolute;
       top: 0;
@@ -346,10 +346,10 @@
       transition: opacity 0.3s ease;
       z-index: -1;
     }
-    .project-card:hover::after {
+    .project-card:hover::after, .certification-card:hover::after {
       opacity: 1;
     }
-    .project-image {
+    .project-image, .certification-image {
       width: 200px;
       height: 120px;
       object-fit: cover;
@@ -357,14 +357,14 @@
       border: 2px solid #00ffcc;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
-    .project-card:hover .project-image {
+    .project-card:hover .project-image, .certification-card:hover .certification-image {
       transform: scale(1.1);
       box-shadow: 0 0 15px rgba(0, 255, 204, 0.7);
     }
-    .project-content {
+    .project-content, .certification-content {
       flex: 1;
     }
-    .github-link, .website-link {
+    .github-link, .website-link, .certificate-link {
       display: inline-block;
       color: #ff4500;
       text-decoration: none;
@@ -373,15 +373,37 @@
       transition: all 0.3s ease;
       margin-right: 1rem;
     }
-    .website-link {
+    .website-link, .certificate-link {
       color: #00ffcc;
     }
-    .github-link:hover, .website-link:hover {
+    .github-link:hover, .website-link:hover, .certificate-link:hover {
       text-shadow: 0 0 10px #ff4500;
       transform: scale(1.05);
     }
-    .website-link:hover {
+    .website-link:hover, .certificate-link:hover {
       text-shadow: 0 0 10px #00ffcc;
+    }
+    .like-button {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: #ffffff;
+      font-size: clamp(0.9rem, 1.5vw, 1rem);
+      cursor: pointer;
+      margin-top: 0.5rem;
+    }
+    .like-button:hover {
+      color: #ff4500;
+    }
+    .like-button.liked .heart {
+      content: '❤️';
+    }
+    .like-button .heart {
+      font-size: 1.2rem;
+      transition: color 0.3s ease;
+    }
+    .like-button.liked .heart {
+      color: #ff4500;
     }
     .cursor {
       position: fixed;
@@ -515,15 +537,15 @@
         width: clamp(120px, 35vw, 160px) !important;
         height: clamp(72px, 21vw, 96px) !important;
       }
-      .project-grid {
+      .project-grid, .certification-grid {
         gap: 1.5rem;
       }
-      .project-card {
+      .project-card, .certification-card {
         flex-direction: column;
         text-align: center;
         padding: 1.2rem;
       }
-      .project-image {
+      .project-image, .certification-image {
         width: 100%;
         max-width: 180px;
         height: auto;
@@ -584,7 +606,7 @@
         width: clamp(80px, 14vw, 120px);
         height: clamp(80px, 14vw, 120px);
       }
-      .project-image {
+      .project-image, .certification-image {
         max-width: 160px;
       }
     }
@@ -615,7 +637,7 @@
       <p>I'm <span class="name">Thoufiq PS</span>, a passionate student navigating the universe of web development, crafting stellar digital experiences with code and creativity.</p>
     </div>
     <div class="profile-container">
-      <img src="thoufiq.jpeg" alt="Profile Image" class="profile-image">
+      <img src="profile.png" alt="Profile Image" class="profile-image">
       <div class="social-nav">
         <a href="https://leetcode.com/u/PS_Thoufiq/" target="_blank" class="leetcode">
           <img src="leetcode.svg" alt="LeetCode">
@@ -649,7 +671,7 @@
       <h1>My Skills</h1>
       <div class="skills-container">
         <div class="skills-center">
-          <span>14+</span>
+          <span>13</span>
           <span>Skills</span>
         </div>
         <div class="orbit-path" style="width: 400px; height: 240px;"></div>
@@ -688,17 +710,21 @@
           <span>Java</span>
         </div>
         <div class="skill-item" data-orbit="288" data-radius="300" data-speed="0.4">
-          <img src="https://cdn.jsdelivr.net/npm/devicon@2.15.1/icons/github/github-original.svg" alt="GitHub">
-          <span>GitHub</span>
-        </div>
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original-wordmark.svg" alt="GitHub" style="filter: brightness(10); width: 80px;">
+  <span>GitHub</span>
+</div>
+
         <div class="skill-item" data-orbit="0" data-radius="400" data-speed="0.3">
           <img src="https://cdn.jsdelivr.net/npm/devicon@2.15.1/icons/mysql/mysql-original.svg" alt="SQL">
           <span>SQL</span>
         </div>
-        <div class="skill-item" data-orbit="90" data-radius="400" data-speed="0.3">
-          <img src="https://cdn.jsdelivr.net/npm/devicon@2.15.1/icons/amazonwebservices/amazonwebservices-original.svg" alt="AWS">
-          <span>AWS Cloud Practitioner</span>
-        </div>
+       <div class="skill-item" data-orbit="90" data-radius="400" data-speed="0.3">
+  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" alt="AWS" style="filter: brightness(10); width: 80px;">
+  <span>AWS Cloud Practitioner</span>
+</div>
+
+
+
         <div class="skill-item" data-orbit="180" data-radius="400" data-speed="0.3">
           <img src="https://cdn.jsdelivr.net/npm/devicon@2.15.1/icons/express/express-original.svg" alt="Express.js">
           <span>Express.js</span>
@@ -714,30 +740,42 @@
     <div class="section-content">
       <h1>My Projects</h1>
       <div class="project-grid">
-        <div class="project-card">
+        <div class="project-card" data-id="project-1">
           <img src="ai.png" alt="AI Mock Interviewer" class="project-image">
           <div class="project-content">
             <h2>Mocksy</h2>
             <p>Built a full-stack web application offering AI-driven mock interviews with camera and mic integration, real-time feedback, and rating system. Integrated job application portal, subject-wise preparation links, and an interactive coding editor with compiler.</p>
             <a href="https://github.com/Thoufiq26/AI-Mock-Interviewer" class="github-link" target="_blank">View on GitHub</a>
             <a href="https://ai-mock-interviewer-7iih.onrender.com" class="website-link" target="_blank">Visit Website</a>
+            <div class="like-button" data-id="project-1">
+              <span class="heart">♡</span>
+              <span class="likes-count">0</span> Likes
+            </div>
           </div>
         </div>
-        <div class="project-card">
+        <div class="project-card" data-id="project-2">
           <img src="universe.png" alt="Task Nebula" class="project-image">
           <div class="project-content">
             <h2>Universe App</h2>
-            <p>Developed an interactive space learning platform featuring NASA's Image of the Day, planet weight calculator, upcoming launches, solar system journey videos, and an astronomy calendar, leveraging multiple space APIs to provide users with dynamic and educational space-related content.</p>
+            <p>Developed an interactive space learning platform featuring NASA's Image of the Day, planet weight calculator, upcoming launches, solar system journey videos, and an astronomy calendar, leveraging multiple space APIs.</p>
             <a href="https://github.com/Thoufiq26/UNIVERSE" class="github-link" target="_blank">View on GitHub</a>
             <a href="https://universe-0b3f.onrender.com/" class="website-link" target="_blank">Visit Website</a>
+            <div class="like-button" data-id="project-2">
+              <span class="heart">♡</span>
+              <span class="likes-count">0</span> Likes
+            </div>
           </div>
         </div>
-        <div class="project-card">
+        <div class="project-card" data-id="project-3">
           <img src="saturn.png" alt="Star Quiz" class="project-image">
           <div class="project-content">
             <h2>Saturn's Ring Tilt Calculation</h2>
-            <p>Implemented a Python program to calculate the tilt of Saturn's rings using astronomical data. Utilized mathematical models and data visualization to represent tilt variations over time.</p>
+            <p>Implemented a Python program to calculate the tilt of Saturn's rings using astronomical data. Utilized mathematical models and data visualization.</p>
             <a href="https://github.com/Thoufiq26/Saturn-Ring-s-Tilt-Calculation" class="github-link" target="_blank">View on GitHub</a>
+            <div class="like-button" data-id="project-3">
+              <span class="heart">♡</span>
+              <span class="likes-count">0</span> Likes
+            </div>
           </div>
         </div>
       </div>
@@ -919,7 +957,7 @@
 
     // Project Hover for Galaxy Spin
     let projectHover = false;
-    document.querySelectorAll('.project-card').forEach(card => {
+    document.querySelectorAll('.project-card, .certification-card').forEach(card => {
       card.addEventListener('mouseenter', () => {
         projectHover = true;
       });
@@ -935,7 +973,6 @@
         let angle = parseFloat(item.dataset.orbit) || 0;
         let radius = parseFloat(item.dataset.radius) || 100;
         const speed = parseFloat(item.dataset.speed) || 0.5;
-        // Scale radius based on screen width: smaller for mobile, larger for laptop
         const scale = window.innerWidth <= 768 ? Math.min(window.innerWidth / 768, 0.4) : Math.min(window.innerWidth / 1200, 1);
         radius *= scale;
         angle += speed;
@@ -1000,6 +1037,38 @@
       document.body.appendChild(particle);
       trailParticles.push({ element: particle, x: 0, y: 0, life: 0 });
     }
+
+    // Like Button Functionality
+    const likesData = JSON.parse(localStorage.getItem('portfolioLikes')) || {};
+    function initializeLikes() {
+      document.querySelectorAll('.like-button').forEach(button => {
+        const id = button.dataset.id;
+        if (!likesData[id]) {
+          likesData[id] = { count: 0, liked: false };
+        }
+        button.querySelector('.likes-count').textContent = likesData[id].count;
+        if (likesData[id].liked) {
+          button.classList.add('liked');
+          button.querySelector('.heart').textContent = '❤️';
+        }
+        button.addEventListener('click', () => {
+          if (!likesData[id].liked) {
+            likesData[id].count += 1;
+            likesData[id].liked = true;
+            button.classList.add('liked');
+            button.querySelector('.heart').textContent = '❤️';
+          } else {
+            likesData[id].count -= 1;
+            likesData[id].liked = false;
+            button.classList.remove('liked');
+            button.querySelector('.heart').textContent = '♡';
+          }
+          button.querySelector('.likes-count').textContent = likesData[id].count;
+          localStorage.setItem('portfolioLikes', JSON.stringify(likesData));
+        });
+      });
+    }
+    initializeLikes();
 
     // Animation Loop
     function animate() {
@@ -1167,8 +1236,8 @@
         });
       }
 
-      if (section.id === 'projects') {
-        gsap.utils.toArray('.project-card').forEach((card) => {
+      if (section.id === 'projects' || section.id === 'certifications') {
+        gsap.utils.toArray('.project-card, .certification-card').forEach((card) => {
           gsap.to(card, {
             opacity: 1,
             x: 0,
@@ -1228,7 +1297,7 @@
         }
       });
     });
-    document.querySelectorAll('a, .project-card').forEach(el => {
+    document.querySelectorAll('a, .project-card, .certification-card, .like-button').forEach(el => {
       el.addEventListener('mouseenter', () => cursor.classList.add('glow'));
       el.addEventListener('mouseleave', () => cursor.classList.remove('glow'));
     });
@@ -1255,7 +1324,7 @@
       galaxy.scale.setScalar(clamp(0.8, 1, window.innerWidth / 1000));
       navCamera.aspect = navCanvas.clientWidth / navCanvas.clientHeight;
       navCamera.updateProjectionMatrix();
-      navRenderer.setSize(navCanvas.clientWidth, navCanvas.clientHeight);
+      navRenderer.setSize(window.innerWidth, navCanvas.clientHeight);
     }
     window.addEventListener('resize', resizeCanvas);
     resizeCanvas();
